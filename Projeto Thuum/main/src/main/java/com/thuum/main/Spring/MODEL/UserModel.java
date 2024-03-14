@@ -1,20 +1,34 @@
-package com.thuum.main.classes;
+package com.thuum.main.Spring.MODEL;
 
-import java.util.List;
 import java.util.UUID;
 
-public abstract class Usuarios {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-    // atributos
+@Entity
+@Table(name = "User_Model")
+public class UserModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idUser;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "log")
     private String log;
+
+    @Column(name = "senha")
     private String senha;
-    private List<Tarefas> tarefasVinculadas;
 
-    // getters e setters
+    // Você pode adicionar mais atributos específicos do UserModel aqui, se necessário.
 
+    // Getters e Setters
     public UUID getIdUser() {
         return idUser;
     }
@@ -47,11 +61,5 @@ public abstract class Usuarios {
         this.senha = senha;
     }
 
-    public List<Tarefas> getTarefasVinculadas() {
-        return tarefasVinculadas;
-    }
-
-    public void setTarefasVinculadas(List<Tarefas> tarefasVinculadas) {
-        this.tarefasVinculadas = tarefasVinculadas;
-    }
+    // Métodos específicos do UserModel, se necessário
 }
