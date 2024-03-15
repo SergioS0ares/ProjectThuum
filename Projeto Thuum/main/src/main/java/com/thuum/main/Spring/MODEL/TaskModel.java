@@ -1,5 +1,6 @@
 package com.thuum.main.Spring.MODEL;
 
+import java.util.Date;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -31,6 +32,15 @@ public class TaskModel {
 
     @Column(name = "lista_assistentes")
     private String assistentesIds;
+    
+    @Column(name = "data_criacao")
+    private Date dataCriacao;
+    
+    @Column (name = "data_prazo")
+    private Date dataPrazoFinal;
+    
+    @Column (name = "data_conclusao")
+    private Date dataConclusao;
 
     // Getters
     public UUID getIdTarefa() {
@@ -78,6 +88,44 @@ public class TaskModel {
         this.assistentesIds = assistentesIds;
     }
 
+    // Getter e Setter para dates que eu inventei agora
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public Date getDataPrazoFinal() {
+        return dataPrazoFinal;
+    }
+
+    public void setDataPrazoFinal(Date dataPrazoFinal) {
+        this.dataPrazoFinal = dataPrazoFinal;
+    }
+
+    public Date getDataConclusao() {
+        return dataConclusao;
+    }
+
+    public void setDataConclusao(Date dataConclusao) {
+        this.dataConclusao = dataConclusao;
+    }
+
+    // Construtor
+    public TaskModel(UUID idTarefa, String nome, String descricao, String checkBoxesIds, UUID idUsuarioAtribuido, String assistentesIds, Date dataCriacao, Date dataPrazoFinal, Date dataConclusao) {
+        this.idTarefa = idTarefa;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.checkBoxesIds = checkBoxesIds;
+        this.idUsuarioAtribuido = idUsuarioAtribuido;
+        this.assistentesIds = assistentesIds;
+        this.dataCriacao = dataCriacao;
+        this.dataPrazoFinal = dataPrazoFinal;
+        this.dataConclusao = dataConclusao;
+    }
+
     // Método toString
     @Override
     public String toString() {
@@ -88,9 +136,13 @@ public class TaskModel {
                 ", checkBoxesIds='" + checkBoxesIds + '\'' +
                 ", idUsuarioAtribuido=" + idUsuarioAtribuido +
                 ", assistentesIds='" + assistentesIds + '\'' +
+                ", dataCriacao=" + dataCriacao +
+                ", dataPrazoFinal=" + dataPrazoFinal +
+                ", dataConclusao=" + dataConclusao +
                 '}';
     }
-
+    
+    // Mais metodos que eu meio q esqueci de fazer
 	public void setIdTask(UUID id) {
 		this.idTarefa = id;
 	}
