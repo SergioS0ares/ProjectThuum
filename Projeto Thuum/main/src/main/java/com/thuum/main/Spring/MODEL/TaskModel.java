@@ -41,6 +41,9 @@ public class TaskModel {
     
     @Column (name = "data_conclusao")
     private Date dataConclusao;
+    
+    @Column (name = "data_ultima_atualizacao")
+    private Date dataAlteracao;
 
     // Getters
     public UUID getIdTarefa() {
@@ -66,8 +69,16 @@ public class TaskModel {
     public String getAssistentesIds() {
         return assistentesIds;
     }
+    
+    public Date getDataAlteracao() {
+    	return dataAlteracao;
+    }
 
     // Setters
+    public void setDataAlteracao(Date date) {
+    	this.dataAlteracao = date;
+    }
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -139,6 +150,7 @@ public class TaskModel {
                 ", dataCriacao=" + dataCriacao +
                 ", dataPrazoFinal=" + dataPrazoFinal +
                 ", dataConclusao=" + dataConclusao +
+                ", dataAlteracao=" + dataAlteracao +
                 '}';
     }
     
