@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/checkboxes")
-public class CheckBoxesController extends CheckBox {
+public class CheckBoxesController {
 
     // Simulação de um repositório de checkboxes em memória
     private List<CheckBox> checkboxes = new ArrayList<>();
