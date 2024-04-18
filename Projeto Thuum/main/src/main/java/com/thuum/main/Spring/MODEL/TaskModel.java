@@ -33,8 +33,8 @@ public class TaskModel {
     @Column(name = "lista_assistentes")
     private String assistentesIds;
     
-    @Column(name = "data_criacao")
-    private Date dataCriacao;
+    @Column(name = "data_criada")
+    private Date dataCriada;
     
     @Column (name = "data_prazo")
     private Date dataPrazoFinal;

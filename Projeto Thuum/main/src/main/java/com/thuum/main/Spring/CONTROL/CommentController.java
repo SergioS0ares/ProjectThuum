@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/comments")
-public class CommentController extends Comment {
+public class CommentController {
 
     // Simulação de um repositório de comentários em memória
     private List<Comment> comments = new ArrayList<>();
